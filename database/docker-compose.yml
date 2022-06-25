@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+
+  pgdb:
+    image: postgres:14.1-alpine
+    restart: on-failure
+    environment:
+      POSTGRES_USER: torobche
+      POSTGRES_PASSWORD: t0r0bch3
+    volumes:
+      - "db:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+
+volumes:
+  db:
+    driver: local
