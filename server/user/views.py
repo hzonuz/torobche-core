@@ -53,7 +53,7 @@ class SignOut(APIView):
         return Response({"success": True})
 
 
-class UserInfo(generics.RetrieveAPIView):
+class UserView(generics.RetrieveAPIView):
     serializer_class = UserSerializer
 
     def get_object(self):
