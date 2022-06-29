@@ -9,9 +9,11 @@ services:
       POSTGRES_USER: torobche
       POSTGRES_PASSWORD: t0r0bch3
     volumes:
-      - "db:/var/lib/postgresql/data"
+      - "db:/var/lib/postgresql/data_torobche"
     ports:
-      - "5432:5432"
+      - "8585:5432"
+    expose:
+      - "8585"
 
 volumes:
   db:
