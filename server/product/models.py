@@ -3,16 +3,26 @@ from django.contrib.auth.models import User
 
 from shop.models import Shop
 
+from mptt.models import MPTTModel, TreeForeignKey
 
-class Category(models.Model):
+class Category(MPTTModel):
     name = models.CharField(max_length=64)
-    subcategory = models.ForeignKey(
-        "self", null=True, blank=True, related_name="subcat", on_delete=models.CASCADE
+    parent = TreeForeignKey(
+        'self',
+        blank=True,
+        null=True,
+        related_name='child',
+        on_delete=models.CASCADE
     )
 
-    def __str__(self):
-        return self.name
+    def __str__(self):                           
+        full_path = [self.name]            
+        k = self.parent
+        while k is not None:
+            full_path.append(k.name)
+            k = k.parent
 
+        return ' -> '.join(full_path[::-1])
 
 class Product(models.Model):
     name = models.CharField(max_length=64)
