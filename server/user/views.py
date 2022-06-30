@@ -54,11 +54,34 @@ class SignOut(APIView):
         return Response({"success": True})
 
 
-class UserView(generics.RetrieveAPIView):
+class UserView(generics.RetrieveUpdateAPIView):
     serializer_class = UserSerializer
 
     def get_object(self):
         return self.request.user
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        res_data = serializer.data
+        if hasattr(instance, "seller"):
+            res_data["phone_number"] = instance.seller.phone_number
+        return Response(res_data)
+    
+    def update(self, request, *args, **kwargs):
+        phone_number = request.data.pop("phone_number", None)
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+        res_data = serializer.data
+        if phone_number and hasattr(request.user, "seller"):
+            request.user.seller.phone_number = phone_number
+            request.user.seller.save()
+            res_data["phone_number"] = phone_number
+
+        return Response(res_data)
+
 
 class FavouriteProductView(generics.ListAPIView):
     serializer_class = ProductSerializer
