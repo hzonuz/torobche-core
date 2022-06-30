@@ -5,6 +5,7 @@ from rest_framework.views import APIView, status
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.serializers import AuthTokenSerializer
+from product.serializers import ProductSerializer
 
 from user.serializers import UserSerializer
 
@@ -58,3 +59,15 @@ class UserView(generics.RetrieveAPIView):
 
     def get_object(self):
         return self.request.user
+
+class FavouriteProductView(generics.ListAPIView):
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        return self.request.user.favourites.all()
+
+class RecentProductView(generics.ListAPIView):
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        return self.request.user.recents.all()
