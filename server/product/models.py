@@ -6,8 +6,8 @@ from shop.models import Shop
 
 class Category(models.Model):
     name = models.CharField(max_length=64)
-    subcategory = models.ManyToManyField(
-        "self", blank=True, null=True, related_name="subcategory"
+    subcategory = models.ForeignKey(
+        "self", blank=True, related_name="subcat", on_delete=models.CASCADE
     )
 
     def __str__(self):
@@ -19,14 +19,14 @@ class Product(models.Model):
     price = models.FloatField()
     description = models.TextField()
     category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, related_name="category"
+        Category, on_delete=models.CASCADE, related_name="product_category"
     )
     url = models.URLField()
     favourites = models.ManyToManyField(
-        User, blank=True, null=True, related_name="favourites"
+        User, blank=True, related_name="favourites"
     )
     recents = models.ManyToManyField(
-        User, blank=True, null=True, related_name="recents"
+        User, blank=True, related_name="recents"
     )
     shop = models.ForeignKey(
         Shop, on_delete=models.CASCADE, related_name="shop"
@@ -37,7 +37,7 @@ class Product(models.Model):
 
 
 class Detail(models.Model):
-    category = models.ManyToManyField(Category, related_name="category")
+    category = models.ManyToManyField(Category, related_name="detail_category")
     name = models.CharField(max_length=64)
 
     def __str__(self):
