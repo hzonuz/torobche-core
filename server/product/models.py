@@ -7,7 +7,7 @@ from shop.models import Shop
 class Category(models.Model):
     name = models.CharField(max_length=64)
     subcategory = models.ForeignKey(
-        "self", blank=True, related_name="subcat", on_delete=models.CASCADE
+        "self", null=True, blank=True, related_name="subcat", on_delete=models.CASCADE
     )
 
     def __str__(self):
@@ -17,7 +17,7 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=64)
     price = models.FloatField()
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name="product_category"
     )
