@@ -1,4 +1,5 @@
-from rest_framework import generics, exceptions
+from rest_framework import generics
+from shop.models import Shop
 
 from shop.serializers import SellerSerializer, ShopSerializer
 
@@ -19,3 +20,9 @@ class ShopsView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(seller=self.request.user.seller)
+
+class ShopsListView(generics.ListAPIView):
+    serializer_class = ShopSerializer
+
+    def get_queryset(self):
+        return Shop.objects.all()

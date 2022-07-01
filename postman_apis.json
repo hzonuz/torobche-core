@@ -726,7 +726,8 @@
 							{
 								"key": "Au",
 								"value": "",
-								"type": "default"
+								"type": "default",
+								"disabled": true
 							},
 							{
 								"key": "Authorization",
@@ -751,6 +752,50 @@
 							"port": "8000",
 							"path": [
 								"shop",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all shops",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/shop/all/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"shop",
+								"all",
 								"v0",
 								""
 							]
