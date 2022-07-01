@@ -1,8 +1,8 @@
 from django.http import HttpResponseRedirect
 from rest_framework import generics, filters, views
 
-from product.serializers import ProductDetailSerializer, ProductSerializer
-from product.models import Product
+from product.serializers import CategorySerializer, ProductDetailSerializer, ProductSerializer
+from product.models import Category, Product
 from product.filters import FilterCategories
 
 class ProductListView(generics.ListCreateAPIView):
@@ -28,3 +28,9 @@ class RedirectToProductView(views.APIView):
         product = self.kwargs.get('product_id')
         url = Product.objects.get(id=product).url
         return HttpResponseRedirect(url)
+        
+
+class CategoryListView(generics.ListAPIView):
+    serializer_class = CategorySerializer
+    def get_queryset(self):
+        return Category.objects.all()

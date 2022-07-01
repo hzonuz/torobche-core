@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from product.models import Product
+from product.models import Category, Product
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -45,3 +45,13 @@ class ProductDetailSerializer(serializers.ModelSerializer):
         for d in details:
             res.append({d.detail.name: d.value})
         return res
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = [
+            "id",
+            "name",
+            "parent",
+            "level"
+        ]
+        model = Category

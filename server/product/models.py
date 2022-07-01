@@ -5,8 +5,12 @@ from django.contrib.auth.models import User
 from shop.models import Shop
 
 from mptt.models import MPTTModel, TreeForeignKey
+from mptt.managers import TreeManager
 
-
+class CategoryManager(TreeManager):
+    def viewable(self):
+        queryset = self.get_queryset().filter(level=0)
+        return queryset
 class Category(MPTTModel):
     name = models.CharField(max_length=64)
     parent = TreeForeignKey(
@@ -21,6 +25,8 @@ class Category(MPTTModel):
             k = k.parent
 
         return " -> ".join(full_path[::-1])
+    
+    objects = CategoryManager()
 
 
 class Product(models.Model):
