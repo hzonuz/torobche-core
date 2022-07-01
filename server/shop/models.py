@@ -10,7 +10,7 @@ class Seller(models.Model):
         return self.user.username
 
 class Shop(models.Model):
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, unique=True)
     seller = models.ForeignKey(
         Seller, on_delete=models.CASCADE, related_name="shop"
     )
