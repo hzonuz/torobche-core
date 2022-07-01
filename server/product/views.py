@@ -9,13 +9,13 @@ from product.serializers import (
     ProductSerializer,
 )
 from product.models import Category, Detail, DetailValue, Product
-from product.filters import FilterCategories
+from product.filters import FilterCategories, FilterPrice
 from shop.models import Shop
 
 
 class ProductListView(generics.ListCreateAPIView):
     serializer_class = ProductSerializer
-    filter_backends = [filters.SearchFilter, filters.OrderingFilter, FilterCategories]
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter, FilterCategories, FilterPrice]
     search_fields = ["name"]
     ordering_fields = ["price", "created_at"]
 
