@@ -89,10 +89,15 @@ class FavouriteProductView(generics.ListAPIView):
     def get_queryset(self):
         return self.request.user.favourites.all()
 
-class RemoveFromFavourites(APIView):
+class AddOrRemoveFromFavourites(APIView):
     def delete(self, request, *args, **kwargs):
         product = self.kwargs.get('product_id')
         self.request.user.favourites.remove(product)
+        return Response({"success": True})
+    
+    def post(self, request, *args, **kwargs):
+        product = self.kwargs.get('product_id')
+        self.request.user.favourites.add(product)
         return Response({"success": True})
 
 class RecentProductView(generics.ListAPIView):
