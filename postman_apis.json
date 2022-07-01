@@ -1,0 +1,846 @@
+{
+	"info": {
+		"_postman_id": "fc3507b8-ffcd-4492-96e3-e84d897c3724",
+		"name": "torobche",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ahmadof\",\n    \"email\": \"ahmadof@gmail.com\",\n    \"password\": \"Mamad123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/signup/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"signup",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"hasan\",\n    \"password\": \"Mamad123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/login/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user info",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"mana\",\n    \"password\": \"Mamad123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/me/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"me",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone_number\": \"09120001122\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/me/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"me",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove from faves",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"mana\",\n    \"password\": \"Mamad123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/favourites/2/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"favourites",
+								"2",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add to faves",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"mana\",\n    \"password\": \"Mamad123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/favourites/2/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"favourites",
+								"2",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get faves",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"mana\",\n    \"password\": \"Mamad123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/favourites/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"favourites",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get recents",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"mana\",\n    \"password\": \"Mamad123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/recents/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"recents",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/product/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"product",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/product/2/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"product",
+								"2",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/product/categories/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"product",
+								"categories",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get details of a cat",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/product/5/details/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"product",
+								"5",
+								"details",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product to shop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/product/2/2/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"product",
+								"2",
+								"2",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"galaxy s21\",\n    \"price\": 500,\n    \"description\": \"kiri\",\n    \"category\": 1,\n    \"url\": \"https://google.com\",\n    \"shop\": [2],\n    \"details\":[\n        {\n            \"id\": 1,\n            \"value\": \"12 GB\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/product/create/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"product",
+								"create",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"chert and pert\",\n    \"reason\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/report/2/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"report",
+								"2",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get records",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 33fe6dbce07073a19abad454733798039986bd3c",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"chert and pert\",\n    \"reason\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/report/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"report",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "redirect product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/product/2/redirect/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"product",
+								"2",
+								"redirect",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get shops of a seller",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/shop/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"shop",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a shop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Au",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token f54d66c03ad91d24cd248a35ceaad600d7232879",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \" 2 مغازه مانا\",\n    \"url\": \"https://google.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/shop/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"shop",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign out",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 5acafd3311eef86e4dd58094417bef52b74ee187",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/signout/v0/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"signout",
+								"v0",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
